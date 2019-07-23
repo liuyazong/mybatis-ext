@@ -1,0 +1,1 @@
+# mybatis通用mapper

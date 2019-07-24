@@ -1,5 +1,7 @@
 package l.y.z.mybatis.extension.provider;
 
+import l.y.z.mybatis.extension.utils.Strings;
+
 public interface SQLProvider {
 
     /**
@@ -9,19 +11,6 @@ public interface SQLProvider {
      * @return 下划线字符串
      */
     default String camelCaseToUnderscore(String source) {
-        char[] chars = source.toCharArray();
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] >= 65 && chars[i] <= 90) {
-                if (0 == i) {
-                    sb.append((char) (chars[i] + 32));
-                } else {
-                    sb.append('_').append((char) (chars[i] + 32));
-                }
-            } else {
-                sb.append(chars[i]);
-            }
-        }
-        return sb.toString().toLowerCase();
+        return Strings.camelCaseToUnderscore(source);
     }
 }

@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.DeleteProvider;
 
 /**
  * 删除
+ *
  * @param <T> 数据库表对应的实体类
  */
 public interface DeleteMapper<T> {

@@ -7,7 +7,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import l.y.z.mybatis.extension.demo.entity.User;
 import l.y.z.mybatis.extension.demo.mapper.UserMapper;
 import l.y.z.mybatis.extension.provider.SelectProvider;
-import l.y.z.mybatis.extension.query.OrderBy;
+import l.y.z.mybatis.extension.query.OrderByPair;
 import l.y.z.mybatis.extension.query.Query;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.logging.slf4j.Slf4jImpl;
@@ -109,8 +109,12 @@ public class AppTest {
     @Test
     public void select() {
         User info = new User();
-        info.setId(2);
-        info.setUserName("哈哈哈哈哈哈");
+//        info.setId(2);
+//        info.setUserName("哈哈哈哈哈哈");
+        info.setOrderByPairs(new OrderByPair[]{new OrderByPair("create_time", false)});
+        info.setOrderBy("id desc");
+        info.setPageNum(1);
+        info.setPageSize(10);
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = mapper.select(info);
         log.debug("select {}, result {}", info, users);
@@ -132,16 +136,15 @@ public class AppTest {
     @Test
     public void page() {
         User info = new User();
-        info.setPassword("a");
+        info.setUserName("哈哈哈哈哈哈");
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        PageInfo<User> pageInfo = mapper.paged(info, new Query(new OrderBy[]{new OrderBy("createTime", false), new OrderBy("id", true)},
-                1, 10));
+        PageInfo<User> pageInfo = mapper.paged(info, new Query(new OrderByPair[]{new OrderByPair("createTime", false), new OrderByPair("id", true)},
+                1, 10) {
+        });
 
         log.debug("pageInfo {}", pageInfo);
 
-        pageInfo.getList().forEach(e -> {
-            log.debug("{}", e);
-        });
+        pageInfo.getList().forEach(e -> log.debug("{}", e));
     }
 
 }

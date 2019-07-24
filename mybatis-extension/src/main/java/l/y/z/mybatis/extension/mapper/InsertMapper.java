@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Options;
 
 /**
  * 插入
+ *
  * @param <T> 数据库表对应的实体类
  */
 public interface InsertMapper<T> {

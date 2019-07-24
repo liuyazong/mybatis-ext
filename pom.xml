@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -25,6 +25,9 @@
         <lombok.version>1.18.8</lombok.version>
         <logback.version>1.2.3</logback.version>
         <mysql.version>8.0.15</mysql.version>
+        <javassist.version>3.25.0-GA</javassist.version>
+        <cglib.version>3.2.12</cglib.version>
+        <HikariCP.version>3.3.1</HikariCP.version>
     </properties>
 
     <dependencies>
@@ -35,13 +38,23 @@
         <dependencies>
             <dependency>
                 <groupId>l.y.z</groupId>
-                <artifactId>mybatis-extention</artifactId>
+                <artifactId>mybatis-extension</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
@@ -53,6 +66,7 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
@@ -69,8 +83,15 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <optional>true</optional>
                 <version>${lombok.version}</version>
+                <optional>true</optional>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <optional>true</optional>
+                <version>${HikariCP.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

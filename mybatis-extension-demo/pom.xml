@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>mybatis-ext</artifactId>
@@ -21,6 +21,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>l.y.z</groupId>
+            <artifactId>mybatis-extension</artifactId>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
@@ -33,12 +37,12 @@
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
-            <groupId>l.y.z</groupId>
-            <artifactId>mybatis-extention</artifactId>
-        </dependency>
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
         </dependency>
     </dependencies>
 

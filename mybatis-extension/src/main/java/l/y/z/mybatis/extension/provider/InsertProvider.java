@@ -1,10 +1,14 @@
 package l.y.z.mybatis.extension.provider;
 
+import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 import org.apache.ibatis.jdbc.SQL;
 
 import java.lang.reflect.Field;
 
-public class InsertProvider implements SQLProvider {
+public class InsertProvider implements SQLProvider, ProviderMethodResolver {
+
+    public InsertProvider() {
+    }
 
     /**
      * 仅处理t中非null属性和其对应的表字段

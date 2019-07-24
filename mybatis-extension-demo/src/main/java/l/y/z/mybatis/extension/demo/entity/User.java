@@ -5,10 +5,11 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class UserInfo {
+public class User {
     private Integer id;
-    private String name;
+    private String userName;
     private String password;
+    private String salt;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 }

@@ -3,7 +3,7 @@
     <property name="log_path" value="."/>
     <property name="app" value="mybatis-extension"/>
     <property name="pattern"
-              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%boldBlue(%thread)] %boldYellow(%5level) %boldGreen(%logger{15}#%line) - %m%n"/>
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS}|%boldBlue(%15.15thread)|%boldYellow(%5.5level)|%boldGreen(%-40.40logger{39})|%m%n"/>
     <contextName>${app}</contextName>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -25,10 +25,8 @@
         </encoder>
     </appender>
 
-    <logger name="io.netty" level="DEBUG"/>
-    <logger name="io.grpc" level="DEBUG"/>
-    <logger name="org.springframework" level="ERROR"/>
-
+    <logger name="org.apache.ibatis" level="DEBUG"/>
+    <logger name="com.zaxxer" level="INFO"/>
     <logger name="l.y.z" level="DEBUG"/>
 
     <root level="DEBUG">

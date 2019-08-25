@@ -270,7 +270,7 @@ public class SQLProvider implements ProviderMethodResolver {
                     Optional.ofNullable(where.getIn())
                             .ifPresent(in ->
                                     in.forEach((key, value) -> {
-                                                StringBuilder sb = new StringBuilder(" IN (");
+                                                StringBuilder sb = new StringBuilder(camelCaseToUnderscore(key)).append(" IN (");
                                                 Object[] objects = value.getObject();
                                                 for (int i = 0; i < objects.length; i++) {
                                                     sb.append("#{where.in.").append(key).append(".object[").append(i).append("]}");
@@ -280,9 +280,9 @@ public class SQLProvider implements ProviderMethodResolver {
                                                 }
                                                 sb.append(")");
                                                 if (value.isAndOr()) {
-                                                    sql.AND().WHERE(camelCaseToUnderscore(key) + sb.toString());
+                                                    sql.AND().WHERE(sb.toString());
                                                 } else {
-                                                    sql.OR().WHERE(camelCaseToUnderscore(key) + sb.toString());
+                                                    sql.OR().WHERE(sb.toString());
                                                 }
                                             }
                                     )
@@ -291,7 +291,7 @@ public class SQLProvider implements ProviderMethodResolver {
                     Optional.ofNullable(where.getNotIn())
                             .ifPresent(notIn ->
                                     notIn.forEach((key, value) -> {
-                                                StringBuilder sb = new StringBuilder(" NOT").append(" IN (");
+                                                StringBuilder sb = new StringBuilder(camelCaseToUnderscore(key)).append(" NOT IN (");
                                                 Object[] objects = value.getObject();
                                                 for (int i = 0; i < objects.length; i++) {
                                                     sb.append("#{where.in.").append(key).append(".object[").append(i).append("]}");
@@ -301,9 +301,9 @@ public class SQLProvider implements ProviderMethodResolver {
                                                 }
                                                 sb.append(")");
                                                 if (value.isAndOr()) {
-                                                    sql.AND().WHERE(camelCaseToUnderscore(key) + sb.toString());
+                                                    sql.AND().WHERE(sb.toString());
                                                 } else {
-                                                    sql.OR().WHERE(camelCaseToUnderscore(key) + sb.toString());
+                                                    sql.OR().WHERE(sb.toString());
                                                 }
                                             }
                                     )

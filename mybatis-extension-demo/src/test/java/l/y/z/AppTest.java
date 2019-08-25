@@ -124,7 +124,15 @@ public class AppTest {
         SelectExample<User> userSelectExample = Example.<User>select()
                 .select(Select.newBuilder().field("*").build())
                 .from(From.newBuilder().tableOf(User.class).build())
-                .where(Where.newBuilder().equal("id", 4L).build())
+                .where(Where.newBuilder()
+                        .equal("id", 4L)
+                        .in("userName", new String[]{"a", "b"})
+                        .or()
+                        .notIn("userName", new String[]{"c", "d"})
+                        .in("id", new Long[]{1L, 2L})
+                        .or()
+                        .notIn("id", new Long[]{1L, 2L})
+                        .build())
                 .orderby(OrderBy.newBuilder().orderBy("id", true).build())
                 .build();
         log.info("select {}", mapper.selectByExample(userSelectExample));

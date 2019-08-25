@@ -1,22 +1,17 @@
 package l.y.z.mybatis.extension.demo.entity;
 
-import l.y.z.mybatis.extension.query.Query;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import l.y.z.mybatis.extension.BaseEntity;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.math.BigInteger;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
-public class User extends Query {
-    private Integer id;
+@ToString(callSuper = true)
+public class User extends BaseEntity<BigInteger> {
     private String userName;
     private String password;
     private String salt;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
 }

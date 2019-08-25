@@ -3,7 +3,9 @@ package l.y.z.mybatis.extension.query;
 import java.util.Arrays;
 
 /**
- * 查询参数
+ * liuyazong
+ * 2019/8/25 21:06
+ * <p>查询参数</p>
  */
 public abstract class Query {
     /**
@@ -28,7 +30,7 @@ public abstract class Query {
     public Query() {
     }
 
-    public Query(OrderByPair[] orderByPairs, Integer pageNum, Integer pageSize) {
+    protected Query(OrderByPair[] orderByPairs, Integer pageNum, Integer pageSize) {
         this.orderByPairs = orderByPairs;
         this.pageNum = pageNum;
         this.pageSize = pageSize;

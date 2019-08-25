@@ -3,12 +3,14 @@ package l.y.z.mybatis.extension.mapper;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import l.y.z.mybatis.extension.Strings;
 import l.y.z.mybatis.extension.query.OrderByPair;
 import l.y.z.mybatis.extension.query.Query;
-import l.y.z.mybatis.extension.utils.Strings;
 
 /**
- * 分页，基于PageHelper
+ * liuyazong
+ * 2019/8/25 21:05
+ * <p>分页，基于PageHelper</p>
  *
  * @param <T> 数据库表对应的实体类
  */

@@ -1,12 +1,15 @@
 package l.y.z.mybatis.extension.mapper;
 
+import l.y.z.mybatis.extension.provider.SQLProvider;
 import l.y.z.mybatis.extension.query.Query;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
 /**
- * 查询，支持分页及排序
+ * liuyazong
+ * 2019/8/25 21:05
+ * <p>查询，支持分页及排序</p>
  *
  * @param <T> 数据库表对应的实体类
  */
@@ -20,6 +23,6 @@ public interface SelectMapper<T> {
      * @return 结果集合
      * @see Query
      */
-    @SelectProvider(type = l.y.z.mybatis.extension.provider.SelectProvider.class, method = "select")
+    @SelectProvider(type = SQLProvider.class, method = "select")
     List<T> select(T t);
 }

@@ -1,7 +1,9 @@
-package l.y.z.mybatis.extension.utils;
+package l.y.z.mybatis.extension;
 
 /**
- * 字符串工具类
+ * liuyazong
+ * 2019/8/25 21:07
+ * <p>字符串工具类</p>
  */
 public abstract class Strings {
     /**

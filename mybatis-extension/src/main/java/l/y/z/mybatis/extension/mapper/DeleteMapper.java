@@ -1,9 +1,12 @@
 package l.y.z.mybatis.extension.mapper;
 
+import l.y.z.mybatis.extension.provider.SQLProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 
 /**
- * 删除
+ * liuyazong
+ * 2019/8/25 21:04
+ * <p>删除</p>
  *
  * @param <T> 数据库表对应的实体类
  */
@@ -15,6 +18,6 @@ public interface DeleteMapper<T> {
      * @param t 数据库表对应的实体对象
      * @return 删除的行数
      */
-    @DeleteProvider(type = l.y.z.mybatis.extension.provider.DeleteProvider.class, method = "delete")
+    @DeleteProvider(type = SQLProvider.class, method = "delete")
     Integer delete(T t);
 }

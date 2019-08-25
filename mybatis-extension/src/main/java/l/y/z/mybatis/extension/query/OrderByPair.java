@@ -1,7 +1,10 @@
 package l.y.z.mybatis.extension.query;
 
+
 /**
- * 排序字段
+ * liuyazong
+ * 2019/8/25 21:06
+ * <p>排序字段</p>
  */
 public class OrderByPair {
 

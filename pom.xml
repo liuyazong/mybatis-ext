@@ -27,6 +27,7 @@
         <mysql.version>8.0.15</mysql.version>
         <javassist.version>3.25.0-GA</javassist.version>
         <cglib.version>3.2.12</cglib.version>
+        <ognl.version>3.2.10</ognl.version>
         <HikariCP.version>3.3.1</HikariCP.version>
     </properties>
 
@@ -55,6 +56,11 @@
                 <groupId>cglib</groupId>
                 <artifactId>cglib</artifactId>
                 <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ognl</groupId>
+                <artifactId>ognl</artifactId>
+                <version>${ognl.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.pagehelper</groupId>

@@ -21,7 +21,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <mybatis.version>3.5.2</mybatis.version>
         <pagehelper.version>5.1.10</pagehelper.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <lombok.version>1.18.8</lombok.version>
         <logback.version>1.2.3</logback.version>
         <mysql.version>8.0.15</mysql.version>
